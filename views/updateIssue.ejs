@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Issue</title>
+</head>
+<body>
+    <h1>Update Issue</h1>
+    <form action="/updateIssue/<%= issue.isbn %>" method="POST">
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate" name="returnDate" value="<%= issue.returnDate %>"><br><br>
+        <button type="submit">Update Issue</button>
+    </form>
+</body>
+</html>

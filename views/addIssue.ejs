@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Issue</title>
+</head>
+<body>
+    <h1>Add New Issue</h1>
+    <form action="/addIssue" method="POST">
+        <label for="readerId">Reader ID:</label>
+        <input type="number" id="readerId" name="readerId" required><br><br>
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" name="isbn" required><br><br>
+        <label for="librarianId">Librarian ID:</label>
+        <input type="number" id="librarianId" name="librarianId" required><br><br>
+        <label for="issueDate">Issue Date:</label>
+        <input type="date" id="issueDate" name="issueDate" required><br><br>
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate" name="returnDate"><br><br>
+        <button type="submit">Add Issue</button>
+    </form>
+</body>
+</html>

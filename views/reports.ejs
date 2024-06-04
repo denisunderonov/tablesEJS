@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Отчеты</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Телефон</th>
+                <th>Автор</th>
+                <th>Название</th>
+                <th>Цена книги</th>
+                <th>Дата выдачи</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% reports.forEach(report => { %>
+                <tr>
+                    <td><%= report.Телефон %></td>
+                    <td><%= report.Автор %></td>
+                    <td><%= report.Название %></td>
+                    <td><%= report.Цена_книги %></td>
+                    <td><%= report.Дата_выдачи %></td>
+                </tr>
+            <% }); %>
+            <tr>
+                <td colspan="3"><strong>Итого:</strong></td>
+                <td colspan="2"><strong><%= totalPrice %></strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>
