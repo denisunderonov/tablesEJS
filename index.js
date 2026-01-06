@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 // index.js
 
 const express = require("express");
@@ -7,18 +9,18 @@ const ejs = require("ejs");
 const methodOverride = require("method-override");
 
 const app = express();
-const port = 4555;
+const port = process.env.PORT || 4555;
 
 // Подключение промежуточного программного обеспечения method-override
 app.use(methodOverride("_method"));
 
 // Настройка подключения к базе данных PostgreSQL
 const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "Denimz13",
-  port: 5432,
+  user: process.env.DB_USER || "postgres",
+  host: process.env.DB_HOST || "localhost",
+  database: process.env.DB_DATABASE || "postgres",
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT || 5432,
 });
 
 // Middleware для обработки тела запроса в формате JSON и URL-кодирования
